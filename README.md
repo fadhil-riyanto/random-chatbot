@@ -22,10 +22,6 @@ Response:
 ```
 
 # Deploy
-Buat folder `datasets` kemudian download semua file ini https://drive.google.com/drive/folders/1QoUS15S0eM9JXcL0lyT-7iAbq07_68po?usp=sharing ke dalam folder tsb.
-
-Kalau malas nge train dan build modelnya atau mau langsung pakai bisa buat folder `models` dan download semua file di https://drive.google.com/drive/folders/1QAVu67HWtCuds0AOW2YfhnuhWvQU1zr2?usp=sharing ke dalam folder tsb.
-
 Install beberapa module yakni `tensorflow`, `matplotlib`, dan `nltk` untuk ngebuat dan train modelnya.
 Lalu, kalau mau deploy ke rest api install juga `flask`
 
@@ -33,5 +29,6 @@ Kalau penginstallan diatas udh semua, jalankan file `datasets_parse.py` untuk me
 
 # Source dataset dan informasi
 
-- Datasets percakapan diambil dari tiga grup (AnonymousChatGroup2, AnonymousChatGroup, dan JabodetabekAnonymousGroup)
+- Model: https://drive.google.com/drive/folders/1QAVu67HWtCuds0AOW2YfhnuhWvQU1zr2?usp=sharing (buat folder `models` masukan semua filenya ke dalam folder tsb)
+- Datasets percakapan diambil dari tiga grup (AnonymousChatGroup2, AnonymousChatGroup, dan JabodetabekAnonymousGroup) (Buat folder `datasets` masukan semua file ini https://drive.google.com/drive/folders/1QoUS15S0eM9JXcL0lyT-7iAbq07_68po?usp=sharing)
 - Informasi gempa diambil dari website data terbuka BMKG (https://data.bmkg.co.id)
