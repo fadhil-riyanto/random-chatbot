@@ -1,6 +1,9 @@
 from functions import updateEQ
 from flask import Flask, request, jsonify
 from predict import predict
+from os import getenv
+
+PORT = getenv("PORT") or 3000
 
 app = Flask("ChatBOT")
 @app.route("/", methods=["POST"])
@@ -17,4 +20,4 @@ def reloadEQ():
     updateEQ()
     return jsonify({"status": "success"})
 
-app.run("0.0.0.0", 3000)
+app.run("0.0.0.0", PORT)

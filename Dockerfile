@@ -2,6 +2,7 @@ FROM python:3.9.6-slim-buster
 
 COPY . /usr/app
 WORKDIR /usr/app
+EXPOSE 3000
 
 pip3 install -r requirements.txt
 
