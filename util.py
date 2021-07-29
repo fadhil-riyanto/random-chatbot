@@ -12,8 +12,8 @@ def bow(sentence, show_details=False):
         for i,w in enumerate(words):
             if w == s:
                 bag[i] = 1
-                if show_details:
-                    print ("found in bag: %s" % w)
+                if show_details == True:
+                    print("found in bag: %s" % w)
 
     return(np.array(bag))
 
