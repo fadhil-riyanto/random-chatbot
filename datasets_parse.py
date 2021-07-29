@@ -50,5 +50,5 @@ for fl in listdir(source):
 
 print("Saving intents to intents.json")
 with open("intents.json", "r+") as f:
-    f.write(dumps({"intents": intents}, indent=2))
+    f.write(dumps({"intents": intents}, indent=4))
     print("Intents saved")

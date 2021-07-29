@@ -71,9 +71,9 @@ def trainAndSave():
     model.add(tf.keras.layers.Dropout(0.5))
     model.add(tf.keras.layers.Dense(len(train_y[0]), activation='softmax'))
 
-    sgd = tf.keras.optimizers.SGD(learning_rate=0.01, decay=1e-6, momentum=0.9, nesterov=True)
-    model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
-    history = model.fit(np.array(train_x), tf.keras.utils.to_categorical(np.array(train_y)), epochs=epochs, batch_size=32, verbose=1)
+    adam = tf.keras.optimizers.Adam(lr=0.001, decay=1e-6, amsgrad=True)
+    model.compile(loss='categorical_crossentropy', optimizer=adam, metrics=['accuracy'])
+    history = model.fit(np.array(train_x), np.array(train_y), epochs=epochs, batch_size=32, verbose=1)
     
     # Plotting
     loss = history.history['loss']
