@@ -14,7 +14,7 @@ from functions import updateEQ
 
 # Intents
 intents = json.load(open("intents.json", "r"))
-updateEQ()
+
 # Vars
 words = []
 classes = []
@@ -55,7 +55,7 @@ for doc in documents:
 
 random.shuffle(training)
 training = np.array(training)
-epochs = 50
+epochs = 120
 
 # train x, y
 train_x = list(training[:, 0])

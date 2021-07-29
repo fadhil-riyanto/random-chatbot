@@ -1,7 +1,7 @@
 import requests
 
-url_pkl = "https://transfer.sh/1JV9QmM/data.pkl"
-url_model = "https://transfer.sh/14SHDgA/tensor_model.h5"
+url_pkl = "https://transfer.sh/1WGRFGq/data.pkl"
+url_model = "https://transfer.sh/1QyFvdN/tensor_model.h5"
 
 # Importing pickle file
 print("Downloading pickle data")

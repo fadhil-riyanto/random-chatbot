@@ -1,7 +1,8 @@
 import re
 from os import listdir
 from json import dumps, load
-from config import maximalArrayItem
+from config import maximalArrayItem, ignored_texts
+from functions import updateEQ
 
 source = "datasets"
 intents = []
@@ -28,7 +29,7 @@ for fl in listdir(source):
              for message in messages:
                  if type(message["text"]) == str and len(message["text"]) > 0:
                     message["text"] = regrex_pattern.sub(r"", message["text"]).strip()
-                    if len(message["text"]) > 2:
+                    if len(message["text"]) > 2 and message["text"] not in ignored_texts:
                         if len(patterns) < maximalArrayItem and patternOrResponse(index) == "pattern":
                             patterns.append(message["text"].lower())
                         elif len(responses) < maximalArrayItem and patternOrResponse(index) == "response":
@@ -51,4 +52,5 @@ for fl in listdir(source):
 print("Saving intents to intents.json")
 with open("intents.json", "r+") as f:
     f.write(dumps({"intents": intents}, indent=4))
+    updateEQ()
     print("Intents saved")
