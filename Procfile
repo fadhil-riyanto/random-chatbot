@@ -1,0 +1,1 @@
+web: pip3 install -r requirements.txt && python3 dl_models.py && python3 rest.py
