@@ -1,5 +1,10 @@
 from json import dumps, load
+from re import sub
 from requester.earthquake import bmkg
+
+def getDownloadUrl(transfer_url):
+    parsed_url = sub(r'(http|https)?:\/\/transfer.sh\/', "", transfer_url)
+    return f"https://transfer.sh/get/{parsed_url}"
 
 def updateEQ():
     print("Updating Earthquake response")

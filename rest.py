@@ -19,5 +19,5 @@ def olahChat():
 def reloadEQ():
     updateEQ()
     return jsonify({"status": "success"})
-
-app.run("0.0.0.0", PORT)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(PORT))

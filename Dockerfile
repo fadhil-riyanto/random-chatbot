@@ -4,7 +4,8 @@ COPY . /usr/app
 WORKDIR /usr/app
 EXPOSE 3000
 
-pip3 install -r requirements.txt
+RUN pip3 install -r requirements.txt
+RUN mkdir models
 
 RUN python3 dl_models.py
 CMD ["python3", "rest.py"]

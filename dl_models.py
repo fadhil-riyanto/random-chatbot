@@ -1,5 +1,5 @@
 import requests
-from dl_datasets import getDownloadUrl
+from functions import getDownloadUrl
 
 url_pkl = "https://transfer.sh/1LcpLkO/data.pkl"
 url_model = "https://transfer.sh/1gry1Vi/tensor_model.h5"

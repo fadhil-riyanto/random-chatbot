@@ -1,10 +1,6 @@
 import requests
 from json import dumps
-from re import sub
-
-def getDownloadUrl(transfer_url):
-    parsed_url = sub(r'(http|https)?:\/\/transfer.sh\/', "", transfer_url)
-    return f"https://transfer.sh/get/{parsed_url}"
+from functions import getDownloadUrl
 
 # URL
 url_others = "https://transfer.sh/1cxqi7W/custom_others.json"
