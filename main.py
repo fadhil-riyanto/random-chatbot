@@ -10,7 +10,6 @@ import pickle
 import random
 import json
 import matplotlib.pyplot as plt
-from functions import updateEQ
 
 # Intents
 intents = json.load(open("intents.json", "r"))
@@ -55,7 +54,7 @@ for doc in documents:
 
 random.shuffle(training)
 training = np.array(training)
-epochs = 120
+epochs = 200
 
 # train x, y
 train_x = list(training[:, 0])
@@ -67,8 +66,9 @@ def trainAndSave():
     model.add(tf.keras.layers.Dense(128, input_shape=(len(train_x[0]),), activation='relu'))
     model.add(tf.keras.layers.Dropout(0.5))
     model.add(tf.keras.layers.Dense(64, activation='relu'))
-    model.add(tf.keras.layers.Dense(10))
+    model.add(tf.keras.layers.Dense(24))
     model.add(tf.keras.layers.Dropout(0.5))
+    model.add(tf.keras.layers.Flatten())
     model.add(tf.keras.layers.Dense(len(train_y[0]), activation='softmax'))
 
     adam = tf.keras.optimizers.Adam(lr=0.001, decay=1e-6, amsgrad=True)

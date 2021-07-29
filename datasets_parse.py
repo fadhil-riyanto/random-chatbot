@@ -29,7 +29,7 @@ for fl in listdir(source):
              for message in messages:
                  if type(message["text"]) == str and len(message["text"]) > 0:
                     message["text"] = regrex_pattern.sub(r"", message["text"]).strip()
-                    if len(message["text"]) > 2 and message["text"] not in ignored_texts:
+                    if len(message["text"]) > 2 and message["text"].lower() not in ignored_texts:
                         if len(patterns) < maximalArrayItem and patternOrResponse(index) == "pattern":
                             patterns.append(message["text"].lower())
                         elif len(responses) < maximalArrayItem and patternOrResponse(index) == "response":
@@ -46,7 +46,7 @@ for fl in listdir(source):
                     if len(patterns) < maximalArrayItem:
                         patterns.append(message.lower())
             tagName = fl.split("_")[1].split(".")[0]
-            intents.append({"tag": tagName, "patterns": list(dict.fromkeys(patterns)), "responses": [], "context": file.get("context", [])})
+            intents.append({"tag": tagName, "patterns": list(dict.fromkeys(patterns)), "responses": file.get("responses", []), "context": file.get("context", [])})
             print(f"{tagName} intent loaded, {len(patterns)} patterns")
 
 print("Saving intents to intents.json")

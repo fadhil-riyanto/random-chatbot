@@ -5,6 +5,7 @@ from util import bow, words
 from main import classes, random
 import math
 from json import load
+from requester.greetings import getGreets
 
 intents = load(open("intents.json", "rb"))
 data = pickle.load(open("models/data.pkl", "rb"))
@@ -46,7 +47,10 @@ def predict(sentence):
     for intent in intents:
         if intent["tag"] == predict_scores[0]["intent"]:
             respId = getRandomInt(0, len(intent["responses"])-1)
-            msg = intent["responses"][respId]
             ctx = intent["context"][0] if len(intent["context"]) > 0 else None
+            if ctx == "greetings":
+                msg = getGreets()
+            else:
+                msg = intent["responses"][respId]
             break
     return { "msg": msg.strip(), "ctx": ctx }
