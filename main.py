@@ -55,7 +55,7 @@ for doc in documents:
 
 random.shuffle(training)
 training = np.array(training)
-epochs = 120
+epochs = 50
 
 # train x, y
 train_x = list(training[:, 0])
@@ -73,7 +73,7 @@ def trainAndSave():
 
     sgd = tf.keras.optimizers.SGD(learning_rate=0.01, decay=1e-6, momentum=0.9, nesterov=True)
     model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
-    history = model.fit(np.array(train_x), np.array(train_y), epochs=epochs, batch_size=32, verbose=1)
+    history = model.fit(np.array(train_x), tf.keras.utils.to_categorical(np.array(train_y)), epochs=epochs, batch_size=32, verbose=1)
     
     # Plotting
     loss = history.history['loss']

@@ -29,6 +29,6 @@ Kalau penginstallan diatas udh semua, jalankan file `datasets_parse.py` untuk me
 
 # Source dataset dan informasi
 
-- Model: https://drive.google.com/drive/folders/1QAVu67HWtCuds0AOW2YfhnuhWvQU1zr2?usp=sharing (buat folder `models` masukan semua filenya ke dalam folder tsb)
-- Datasets percakapan diambil dari tiga grup (AnonymousChatGroup2, AnonymousChatGroup, dan JabodetabekAnonymousGroup) (Buat folder `datasets` masukan semua file ini https://drive.google.com/drive/folders/1QoUS15S0eM9JXcL0lyT-7iAbq07_68po?usp=sharing)
+- Model dapat di download dengan cara menjalankan file `dl_models.py`
+- Datasets percakapan diambil dari tiga grup ([AnonymousChatGroup2](https://t.me/Anonymouschatgroupdua), [AnonymousChatGroup](https://t.me/Anonymouschatgroupsaatu), dan [AnonymousChatGroupBaru](https://t.me/anonymousgroupchatbaru)) (Jika ingin download datasetsnya bisa jalankan file `dl_datasets.py`)
 - Informasi gempa diambil dari website data terbuka BMKG (https://data.bmkg.co.id)
